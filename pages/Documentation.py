@@ -25,7 +25,7 @@ components.html(
   height="2000"
   src="https://api-brest-isen-8f7979410f0b.herokuapp.com/docs">
 </iframe>
-    """
+    """,height=6000
 )
 ### Forms st.form, st.form_submit_button et st.select_slider
 

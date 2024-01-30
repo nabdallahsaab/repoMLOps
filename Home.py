@@ -25,17 +25,7 @@ if st.checkbox("Show Dataframe"):
     st.write(df)
 
 
-## test api
-components.html(
-    """<iframe scrolling="yes"
-  id="inlineFrameExample"
-  title="Inline Frame Example"
-  width="1200"
-  height="2000"
-  src="https://api-brest-isen-8f7979410f0b.herokuapp.com/docs">
-</iframe>
-    """
-)
+
 ### Forms st.form, st.form_submit_button et st.select_slider
 
 

@@ -13,16 +13,7 @@ st.set_page_config(page_title="Streamlit Page",page_icon="✨",layout="wide",ini
 ### Title et markdown : st.title et st.markdown
 st.title("My Streamlit App")
 
-### Checkbox st.checkbox
-@st.cache_data
-def load_data():
-    df=pd.read_csv('train.csv',sep=";")
-    return df
 
-df=load_data()
-### Selectbox st.selectbox
-if st.checkbox("Show Dataframe"):
-    st.write(df)
 
 
 ## test api

@@ -23,6 +23,16 @@ df=load_data()
 ### Selectbox st.selectbox
 if st.checkbox("Show Dataframe"):
     st.write(df)
+    # Display the DataFrame using st.table
+    selected_row_index = st.table(df)
+
+    # You can access the selected row using the index
+    if selected_row_index is not None and selected_row_index < len(df):
+        selected_row = df.iloc[selected_row_index]
+        st.write(f"Selected Row: {selected_row}")
+        # Perform actions with the selected row data
+    else:
+        st.write("No row selected.")
 
 
 

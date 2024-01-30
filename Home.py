@@ -22,9 +22,9 @@ def load_data():
 df=load_data()
 ### Selectbox st.selectbox
 if st.checkbox("Show Dataframe"):
-    st.write(df)
-    # Display the DataFrame using st.table
     selected_row_index = st.table(df)
+    # Display the DataFrame using st.table
+   
 
     # You can access the selected row using the index
     if selected_row_index is not None and selected_row_index < len(df):

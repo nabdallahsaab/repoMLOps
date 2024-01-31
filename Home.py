@@ -29,13 +29,7 @@ show_dataframe = st.checkbox("Show Dataframe")
 
 # Display the DataFrame if the checkbox is checked
 if show_dataframe:
-    selected_row = st.table(df.style.set_table_styles([{
-        'selector': 'tr:hover',
-        'props': [('background-color', '#cfe2f3')]
-    }]).format({}))  # Highlight row on hover
-
-    # The selected_row variable now contains the selected row data
-    st.write("Selected Row:", selected_row)
+    st.write(df)
 
 
 

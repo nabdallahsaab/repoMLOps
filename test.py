@@ -27,7 +27,7 @@ class TestDev(TestCase):
         self.assertIn("httpx", requirements)
         self.assertIn("pydantic", requirements)
         self.assertIn("python-multipart", requirements)
-        self.assertIn("mlflow==2.7.0", requirements)
+        self.assertIn("mlflow==2.7.1", requirements)
         
     
 

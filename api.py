@@ -5,7 +5,9 @@ import numpy as np
 from pydantic import BaseModel
 import pickle
 import pandas as pd
+import mlflow
 
+import os
 # Création des tags
 tags  = [
     {
@@ -80,7 +82,27 @@ def predict(credit: Credit):
     with open('model.pkl', 'rb') as f: model = pickle.load(f)
     predict_value = int(model.predict([list(credit.dict().values())])[0])
     return {"pred" : predict_value}
+# Point de terminaison : Prédiction
+@app.post("/predictmlflow", tags=["Predict Model 1"])
+def predictmlflow(credit: Credit):
 
+    os.environ['AWS_ACCESS_KEY_ID'] = "AKIA3R62MVALHESATEYJ"
+    os.environ['AWS_SECRET_ACCESS_KEY'] = "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"
+
+
+    mlflow.set_tracking_uri("https://isen-mlflow-fae8e0578f2f.herokuapp.com/")
+
+
+    logged_model = 'runs:/201bd90bf6e747a4af86e0d0f34511af/model Bank 22'
+
+    # Load model as a PyFuncModel.
+    loaded_model = mlflow.pyfunc.load_model(logged_model)
+
+    # Predict on a Pandas DataFrame.
+    import pandas as pd
+    #loaded_model.predict(pd.DataFrame(data))
+    predict_value = int(loaded_model.predict(credit.dict())[0])
+    return {"pred" : predict_value}
 
 # Point de terminaison qui permet de verser un fichier
 @app.post("/uploadfile", tags=["Upload"])

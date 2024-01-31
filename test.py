@@ -22,11 +22,13 @@ class TestDev(TestCase):
             requirements = f.read()
         self.assertIn("uvicorn", requirements)
         self.assertIn("fastapi", requirements)
-        self.assertIn("scikit-learn==1.1.2", requirements)
-        self.assertIn("pandas==2.0.3", requirements)
+        self.assertIn("scikit-learn==1.3.1", requirements)
+        self.assertIn("pandas==1.5.0", requirements)
         self.assertIn("httpx", requirements)
         self.assertIn("pydantic", requirements)
         self.assertIn("python-multipart", requirements)
+        self.assertIn("mlflow==2.7.0", requirements)
+        
     
 
     # Vérifie que le gitignore est présent

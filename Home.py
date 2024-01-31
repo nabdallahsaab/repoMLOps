@@ -18,9 +18,6 @@ st.title("My Streamlit App")
 @st.cache_data
 def load_data():
     df=pd.read_csv('train.csv',sep=";")
-    df['id'] = range(len(df))
-    return df
-
     return df
 
 df=load_data()
@@ -35,8 +32,8 @@ if show_dataframe:
 
 with open("all_dict.json") as json_file:
     data=json.load(json_file)
-st.write(df.columns)
-st.write(data.keys)
+    st.write(df.columns)
+    st.write(data.keys)
 ### Forms st.form, st.form_submit_button et st.select_slider
 
 

@@ -1,4 +1,4 @@
-
+docker build . -t mlflow_container
 docker tag mlflow_container registry.heroku.com/isen-mlflow-nadine/web
 docker push registry.heroku.com/isen-mlflow-nadine/web
 heroku container:login
